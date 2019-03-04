@@ -19,24 +19,36 @@ const PEN = 20;
 
 function success(item){
     let enhancer = item.enhancement;
-    return enhancer ++;
+    return {
+        ...item,
+        enhancement: enhancer++,
+    }
 }
 
 function fail(item){
-    let e = item.enhancement;
-    let d = item.durability;
+    const enhanceFail = Object.assign({}, item);
+    let e = enhanceFail.enhancement;
+    let d = enhanceFail.durability;
     if (e <= 14 && d < 25) {
-        return failure;
+        return null;
     } else if (e >= 15 && d < 10) {
-        return failure;
+        return null;
     } else if (e <= 14) {
-        return d - 5;
+        return {
+            ...item,
+            durability: d - 5,
+        }
     } else if (e > 14) {
-        return d - 10;
+        return {
+            ...item,
+            durability: d - 10,
+        }
     } else if (e > PRI){
-        e - 1;
+        return {
+            ...item,
+            durability: e - 1,
+        }
     }
-
 }
 
 function repair(item){
