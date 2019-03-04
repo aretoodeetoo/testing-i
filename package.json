@@ -1,5 +1,11 @@
 {
+  "name": "Christie-Roy-TDD",
+  "author": "Christie Roy",
+  "license": "MIT",
   "dependencies": {},
+  "scripts": {
+    "test": "jest --watch"
+  },
   "devDependencies": {
     "jest": "^24.1.0"
   }
