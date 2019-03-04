@@ -21,7 +21,7 @@ function success(item){
     let enhancer = item.enhancement;
     return {
         ...item,
-        enhancement: enhancer++,
+        enhancement: enhancer + 1,
     }
 }
 
