@@ -22,6 +22,7 @@ function success(item){
     return {
         ...item,
         enhancement: enhancer + 1,
+        name: `+${enhancer} ${item.name}`,
     }
 }
 
@@ -43,10 +44,10 @@ function fail(item){
             ...item,
             durability: d - 10,
         }
-    } else if (e > PRI){
+    } else if (e > 16){
         return {
             ...item,
-            durability: e - 1,
+            enhancement: e - 1,
         }
     }
 }
